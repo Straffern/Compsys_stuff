@@ -1,0 +1,170 @@
+% !TEX root = master.tex
+
+\questionhead{Machine architecture}{33}
+
+\subquestionhead{Assembler programming}{13}
+
+% Question 1.1.1
+\begin{question}
+% Write your answer here
+
+\maxlines{30}
+\end{question}
+
+\newpage
+
+% Question 1.1.2
+\begin{question}
+% Write your answer here
+
+\maxlines{20}
+\end{question}
+
+% Question 1.1.3
+\begin{question}
+% Write your answer here
+
+\maxlines{10}
+\end{question}
+
+
+\newpage
+\subquestionhead{Performance / Pipeline}{10}
+
+% Question 1.2.1
+\begin{question}
+% Write your answer here
+
+\maxlines{20}
+\end{question}
+
+\newpage
+
+% Question 1.2.2
+\begin{question}
+\small
+\noindent\hspace{-14mm}
+\begin{tabular}{r|l|p{2mm}|p{2mm}|p{2mm}|p{2mm}|p{2mm}|p{2mm}|p{2mm}|p{2mm}|p{2mm}|p{2mm}|p{2mm}|p{2mm}|p{2mm}|p{2mm}|p{2mm}|p{2mm}|p{2mm}|p{2mm}|p{2mm}|p{2mm}|}
+  \cline{2-22}
+ & Code  & \multicolumn{20}{l|}{Timing}                        \\
+  \cline{2-22}
+   &\verb+.L3:                         +&\multicolumn{20}{l|}{}\\
+  \cline{2-22}
+  1 &\verb+  movq (%r14), %rax         +&  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+  \cline{2-22}
+  2 &\verb+  cbe %rax, %rsi, .L1.      +&  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+  \cline{2-22}
+  3 &\verb+.L4:                        +&  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+  \cline{2-22}
+  4 &\verb+  leaq (%rdi, %rax, 8), %r11+&  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+  \cline{2-22}
+  5 &\verb+  movq (%r11), %r8.         +&  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+  \cline{2-22}
+  6 &\verb+  movq (%rdx), %r10         +&  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+  \cline{2-22}
+  7 &\verb+  cbae %r10, %r8, .L3       +&  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+  \cline{2-22}
+  8 &\verb+  movq %r8, (%rdx)          +&  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+  \cline{2-22}
+  9 &\verb+  movq %rax, (%rcx)         +&  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+  \cline{2-22}
+  10 &\verb+  jmp .L3                  +&  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+  \cline{2-22}
+  11 &\verb+.L3:                       +&  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+  \cline{2-22}
+  12 &\verb+  addq $1, %rax            +&  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+  \cline{2-22}
+\end{tabular}
+
+~
+% Write your answer here
+
+\maxlines{15}
+\end{question}
+
+\newpage
+
+% Question 1.2.3
+\begin{question}
+% Write your answer here
+
+\maxlines{15}
+\end{question}
+
+
+\newpage
+\subquestionhead{Data Cache}{10}
+
+% Question 1.3.1
+\begin{question}
+% Write your answer here
+
+\maxlines{15}
+\end{question}
+
+% Question 1.3.2
+\begin{question}
+% Write your answer here
+
+\maxlines{15}
+\end{question}
+
+\newpage
+
+% Question 1.3.3
+\begin{question}
+
+\begin{center}
+\begin{tabular}{|r|c|}
+\hline
+Reference & Hit/Miss \\
+\hline
+\texttt{0x000} &     \\ \hline
+\texttt{0x001} &     \\ \hline
+\texttt{0x01F} &     \\ \hline
+\texttt{0x102} &     \\ \hline
+\texttt{0x203} &     \\ \hline
+\texttt{0x304} &     \\ \hline
+\texttt{0x10C} &     \\ \hline
+\texttt{0x705} &     \\ \hline
+\texttt{0x002} &     \\ \hline
+\texttt{0x10F} &     \\ \hline
+\texttt{0x210} &     \\ \hline
+\texttt{0x010} &     \\ \hline
+\end{tabular}
+\end{center}
+\end{question}
+
+\newpage
+
+% Question 1.3.4
+\begin{question}
+
+\begin{center}
+\begin{tabular}{|r|c|}
+\hline
+Reference & Hit/Miss \\
+\hline
+\texttt{0x000} &     \\ \hline
+\texttt{0x001} &     \\ \hline
+\texttt{0x01F} &     \\ \hline
+\texttt{0x102} &     \\ \hline
+\texttt{0x203} &     \\ \hline
+\texttt{0x304} &     \\ \hline
+\texttt{0x10C} &     \\ \hline
+\texttt{0x705} &     \\ \hline
+\texttt{0x002} &     \\ \hline
+\texttt{0x10F} &     \\ \hline
+\texttt{0x210} &     \\ \hline
+\texttt{0x010} &     \\ \hline
+\end{tabular}
+\end{center}
+\end{question}
+
+
+% Question 1.3.5
+\begin{question}
+% Write your answer here
+
+\maxlines{10}
+\end{question}

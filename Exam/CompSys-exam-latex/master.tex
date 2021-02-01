@@ -1,0 +1,63 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{fullpage}
+\usepackage{listings}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage{lastpage}
+\usepackage{fancyhdr}%
+%
+\pagestyle{fancy}%
+\lhead{\footnotesize\assignment\\\location\\\textbf{Date:} \when}
+\rhead{\large Exam number: \large\examnumber}
+\cfoot{\thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0in}
+\renewcommand{\headsep}{20pt}
+\setlength{\headheight}{20pt}
+\addtolength{\textheight}{-20pt}
+
+\newcommand{\maxlines}[1]{\par\noindent{\small\emph{(Maximum #1 lines.)}}}
+\renewcommand{\arraystretch}{1.8}
+\newcommand{\questionhead}[2]{\section{#1 (about #2 \%)}}
+\newcommand{\subquestionhead}[2]{\subsection{#1 (about #2 \%)}}
+
+\newcounter{questionnumber}
+\makeatletter\@addtoreset{questionnumber}{subsection}\makeatother
+\newenvironment{question}{%
+\stepcounter{questionnumber}%
+\subsubsection*{\underline{Question \thesubsection.\arabic{questionnumber}:}}
+}{~}
+
+\def\coursename{Computer Systems}
+\def\courseyear{B1-2-2020/21}
+\def\when{January 27, 2021}
+\def\assignment{8-hour Written Exam in \coursename, \courseyear}
+\def\location{Department of Computer Science (DIKU)}
+
+\title{\LARGE\assignment\\~\\
+\large\location\\
+\large\when}
+\date{}
+
+% No need to edit above here
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% WRITE YOUR EXAM NUMBER HERE -- instead of XXXX
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\examnumber{XXXX}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+
+\input{arc}
+
+\pagebreak
+\input{os}
+
+\pagebreak
+\input{cn}
+
+\end{document}
